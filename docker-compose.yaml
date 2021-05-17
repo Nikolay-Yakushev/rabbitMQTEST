@@ -1,0 +1,11 @@
+version: '3'
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    hostname: my-rabbit
+    volumes:
+      - ./rabbitmq/etc/definitions.json:/etc/rabbitmq/definitions.json:ro
+      - ./rabbitmq/etc/rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro
+    ports:
+      - 5672:5672
+      - 15672:15672
